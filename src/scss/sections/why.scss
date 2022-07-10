@@ -1,0 +1,45 @@
+@use "../functions" as *;
+@use "../helpers" as *;
+
+.section--why {
+  padding-block: 5rem fluid-size(80px, 160px, 1100);
+  background-color: v("light-grey");
+
+  .whys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 2rem;
+
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 550px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .why {
+    @media screen and (max-width: 550px) {
+      text-align: center;
+    }
+
+    &__icon {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    &__title {
+      font-size: fluid-size(20px, 24px, 1100);
+      margin-block: 2rem 2rem;
+    }
+
+    &__description {
+      color: v("grey");
+      font-weight: 300;
+      font-size: 0.875rem;
+      max-width: 30ch;
+    }
+  }
+}

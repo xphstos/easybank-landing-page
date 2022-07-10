@@ -1,0 +1,30 @@
+@use "../functions" as *;
+@use "../helpers" as *;
+
+.btn {
+  --background: linear-gradient(
+    to right,
+    var(--accent),
+    var(--complementary) 40% 60%,
+    var(--accent)
+  );
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  white-space: nowrap;
+  padding-inline: 2rem;
+  border-radius: 3rem;
+  color: v("white");
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+  background-image: v("background");
+  background-size: 250%;
+  background-position-x: 0%;
+  transition: background-position 0.5s ease;
+
+  &:hover {
+    background-position-x: 100%;
+  }
+}

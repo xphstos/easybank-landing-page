@@ -1,0 +1,58 @@
+@use "../functions" as *;
+@use "../helpers" as *;
+
+.footer {
+  @extend %container;
+  padding-block: fluid-size(32px, 48px, 1100);
+  background-color: v("off-black");
+  color: v("white");
+  display: grid;
+  grid-template-columns: max-content auto max-content;
+  grid-template-areas: "logo menu cta" "social menu copy";
+  gap: 1rem 4rem;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    text-align: center;
+
+    > * + * {
+      margin-top: 1.75rem;
+    }
+  }
+
+  &__homelink {
+    grid-area: logo;
+
+    &-logo {
+      vertical-align: middle;
+      width: 8.5rem;
+      height: auto;
+
+      path[fill="#2D314D"] {
+        fill: v("white");
+      }
+    }
+  }
+
+  &__nav {
+    grid-area: menu;
+    margin-right: auto;
+  }
+
+  &__social {
+    grid-area: social;
+  }
+
+  &__invite {
+    grid-area: cta;
+  }
+
+  &__copy {
+    grid-area: copy;
+    color: v("grey");
+
+    small {
+      font-size: 0.75rem;
+    }
+  }
+}

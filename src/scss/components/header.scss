@@ -1,0 +1,49 @@
+@use "../functions" as *;
+@use "../helpers" as *;
+
+.header {
+  @extend %container;
+  background-color: v("white");
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  min-height: v("header-height");
+
+  // &__homelink,
+  // &__toggle {
+  //   position: relative;
+  //   z-index: 1500;
+  // }
+
+  &__homelink {
+    flex: 0;
+
+    &-logo {
+      vertical-align: middle;
+      width: 8.5rem;
+      height: auto;
+    }
+  }
+
+  &__toggle {
+    flex: 0 0 1.5rem;
+    margin-left: auto;
+    display: none;
+
+    @media screen and (max-width: 768px) {
+      display: inline-flex;
+    }
+  }
+
+  &__nav {
+    flex: 1;
+  }
+
+  &__invite {
+    margin-left: auto;
+  }
+}
